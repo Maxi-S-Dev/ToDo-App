@@ -8,4 +8,16 @@ public partial class App : Application
 
 		MainPage = new MainPage();
 	}
+
+	protected override Window CreateWindow(IActivationState activationState)
+	{
+		Window window = base.CreateWindow(activationState);
+		if(window != null)
+		{
+			window.Title = "";
+
+		}
+
+		return window;
+	}
 }
