@@ -1,9 +1,4 @@
-﻿@page "/todo"
-
-<div id="wrapper">
-    <h3>ToDo</h3>
-
-    <div id="taskList" >
+﻿    <div id="taskList" >
 
         <EditForm Model="task" class="input-group" OnValidSubmit="AddTask">
             <input class="form-control" @bind-value="task.name" />
@@ -39,21 +34,11 @@
         </ul>
     </div>
 
-    <div id="@dimmWindow"></div>
 
-    <div id="@flyoutState"></div>
-
-</div>
 
 @code {
-    private string flyoutState => colapseFlyout ? null : "flyout";
-    private string dimmWindow => colapseFlyout ? null : "overlay";
-
-    bool colapseFlyout = true;
-
     private bool mouseOver = false;
     TaskModel task = new TaskModel();
-    private float test = 0;
 
     protected List<TaskModel> taskList = new List<TaskModel>();
 
@@ -63,12 +48,11 @@
         {
             taskList.Add(task);
             task = new TaskModel();
-            test = 300;
         }
     }
 
     void EditTask()
     {
-        colapseFlyout = false;
+
     }
 }

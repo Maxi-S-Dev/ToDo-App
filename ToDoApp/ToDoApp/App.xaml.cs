@@ -15,7 +15,6 @@ public partial class App : Application
 		if(window != null)
 		{
 			window.Title = "";
-
 		}
 
 		return window;

@@ -1,0 +1,44 @@
+﻿@page "/"
+@using ToDoApp.Pages.Components
+
+<div class="container-fluid wrapper">
+    <ToDo/>
+</div>
+
+@code {
+    private int winWidth;
+    private int size;
+
+    private string flyoutState => colapseFlyout ? null : "flyout";
+    private string dimmWindow => colapseFlyout ? null : "overlay";
+
+    bool colapseFlyout = true;
+
+    private bool mouseOver = false;
+    TaskModel task = new TaskModel();
+    private float test = 0;
+
+    protected List<TaskModel> taskList = new List<TaskModel>();
+
+    void AddTask()
+    {
+        if (!string.IsNullOrEmpty(task.name))
+        {
+            taskList.Add(task);
+            task = new TaskModel();
+            test = 300;
+        }
+    }
+
+    void EditTask()
+    {
+        colapseFlyout = false;
+    }
+
+    public class WindowDimension
+    {
+        public int width{ get; set; }
+        public int height { get; set; }
+    }
+}
+

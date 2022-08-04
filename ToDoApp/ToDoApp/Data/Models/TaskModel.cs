@@ -12,5 +12,16 @@ namespace ToDoApp.Data.Models
         public bool isCompleted { get; set; }
 
         public bool mouseOver;
+
+        /*
+         * deadline
+         * doDate
+         * descroption
+         * state
+         * priority
+         * (people)
+         * subtasks
+         * tag
+         */
     }
 }
